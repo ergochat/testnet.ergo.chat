@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# deploy hook for Let's Encrypt certificates:
+# install this as /etc/letsencrypt/renewal-hooks/deploy/install-certificates
+
+set -eu
+
+# put your domain here:
+DOMAIN="testnet.oragono.io"
+
+umask 077
+cp /etc/letsencrypt/live/${DOMAIN}/fullchain.pem /home/oragono/
+cp /etc/letsencrypt/live/${DOMAIN}/privkey.pem /home/oragono/
+chown oragono:oragono /home/oragono/*.pem
+# rehash oragono, which will reload the certificates:
+systemctl reload oragono.service
+
+# reload nginx as well (this may not be necessary depending on your certbot setup):
+systemctl reload nginx.service
