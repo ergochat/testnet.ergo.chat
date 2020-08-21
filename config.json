@@ -17,7 +17,8 @@
     "startupOptions" : {
         "websocket": "wss://testnet.oragono.io/webirc",
         "channel": "#chat",
-        "nick": "kiwi-n?"
+        "nick": "kiwi-n?",
+        "nick_format": "/^.+$/"
     },
     "embedly": {
         "key": ""
