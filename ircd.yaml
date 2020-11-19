@@ -42,6 +42,9 @@ server:
         "/tmp/oragono_websocket":
             websocket: true
 
+        # Similar UNIX domain socket listener, but for ordinary (non-websocket) IRC connections:
+        "/tmp/oragono":
+
         # Example of a Tor listener: any connection that comes in on this listener will
         # be considered a Tor connection. It is strongly recommended that this listener
         # *not* be on a public interface --- it should be on 127.0.0.0/8 or unix domain:
