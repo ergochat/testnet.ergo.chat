@@ -130,9 +130,12 @@ server:
     forward-confirm-hostnames: true
 
     # use ident protocol to get usernames
-    # this is not recommended in most configurations (since it will slow down handshakes)
-    # and is enabled here for testing:
-    check-ident: true
+    check-ident: false
+
+    # ignore the supplied user/ident string from the USER command, always setting user/ident
+    # to the following literal value; this can potentially reduce confusion and simplify bans.
+    # the value must begin with a '~' character. comment out / omit to disable:
+    coerce-ident: '~u'
 
     # password to login to the server
     # generated using  "oragono genpasswd"
@@ -311,7 +314,7 @@ accounts:
             max-attempts: 30
 
         # this is the bcrypt cost we'll use for account passwords
-        bcrypt-cost: 9
+        bcrypt-cost: 4
 
         # length of time a user has to verify their account before it can be re-registered
         verify-timeout: "32h"
