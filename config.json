@@ -15,7 +15,7 @@
         { "name": "Elite", "url": "static/themes/elite" }
     ],
     "startupOptions" : {
-        "websocket": "wss://testnet.oragono.io/webirc",
+        "websocket": "wss://testnet.ergo.chat/webirc",
         "channel": "#chat",
         "nick": "kiwi-n?",
         "nick_format": "/^.+$/"

@@ -9,11 +9,11 @@ set -eu
 DOMAIN="testnet.oragono.io"
 
 umask 077
-cp /etc/letsencrypt/live/${DOMAIN}/fullchain.pem /home/oragono/
-cp /etc/letsencrypt/live/${DOMAIN}/privkey.pem /home/oragono/
-chown oragono:oragono /home/oragono/*.pem
+cp /etc/letsencrypt/live/${DOMAIN}/fullchain.pem /home/ergo/
+cp /etc/letsencrypt/live/${DOMAIN}/privkey.pem /home/ergo/
+chown ergo:ergo /home/ergo/*.pem
 # rehash oragono, which will reload the certificates:
-systemctl reload oragono.service
+systemctl reload ergo.service
 
 # reload nginx as well (this may not be necessary depending on your certbot setup):
 systemctl reload nginx.service

@@ -1,16 +1,15 @@
-# This is the configuration file for the oragono instance running on testnet.oragono.io
+# This is the configuration file for the ergo instance running on testnet.ergo.chat
 
 # network configuration
 network:
     # name of the network
-    name: OraTestnet
+    name: ErgoTestnet
 
 # server configuration
 server:
     # server name
-    name: testnet.oragono.io
+    name: testnet.ergo.chat
 
-    name: oragono.test
     # addresses to listen on
     listeners:
         # The standard plaintext port for IRC is 6667. This will listen on all interfaces.
@@ -39,11 +38,11 @@ server:
 
         # UNIX domain socket websocket listener, in plaintext. This is used by nginx when it
         # reverse proxies websocket connections:
-        "/tmp/oragono_websocket":
+        "/tmp/ergo_websocket":
             websocket: true
 
         # Similar UNIX domain socket listener, but for ordinary (non-websocket) IRC connections:
-        "/tmp/oragono":
+        "/tmp/ergo_sock":
 
         # Example of a Tor listener: any connection that comes in on this listener will
         # be considered a Tor connection. It is strongly recommended that this listener
@@ -101,10 +100,6 @@ server:
         # prevent malicious websites from making their visitors connect to oragono
         # without their knowledge. An empty list means that there are no restrictions.
         allowed-origins:
-            - "https://oragono.io"
-            - "https://*.oragono.io"
-            - "https://ircdocs.horse"
-            - "https://*.ircdocs.horse"
 
     # casemapping controls what kinds of strings are permitted as identifiers (nicknames,
     # channel names, account names, etc.), and how they are normalized for case.

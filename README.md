@@ -1,7 +1,7 @@
-testnet.oragono.io
-==================
+testnet.ergo.chat
+=================
 
-These are config files for the [Oragono testnet](https://testnet.oragono.io). They provide a "worked example" of how to configure Oragono as a systemd service, with nginx and Kiwi IRC.
+These are config files for the [Ergo testnet](https://testnet.ergo.chat). They provide a "worked example" of how to configure Ergo as a systemd service, with nginx and Kiwi IRC.
 
 Installation instructions for most config files are described in comments in the config files. The exception is Kiwi's config.json. To install Kiwi in a standard nginx configuration:
 

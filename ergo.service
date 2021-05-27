@@ -1,0 +1,22 @@
+# this is the systemd unit file for Ergo on the testnet.
+# it is installed at /etc/systemd/system/ergo.service
+# after installing it, you must run:
+# systemctl daemon-reload
+# systemctl enable ergo.service
+# systemctl start ergo.service
+
+[Unit]
+Description=A modern IRC server written in Go
+After=network.target
+
+[Service]
+Type=simple
+User=ergo
+Group=ergo
+WorkingDirectory=/home/ergo
+ExecStart=/home/ergo/ergo run
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
