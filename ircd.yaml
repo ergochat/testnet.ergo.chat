@@ -489,7 +489,7 @@ channels:
 
     # as a crude countermeasure against spambots, anonymous connections younger
     # than this value will get an empty response to /LIST (a time period of 0 disables)
-    list-delay: 0s
+    list-delay: 15s
 
     # INVITE to an invite-only channel expires after this amount of time
     # (0 or omit for no expiration):
